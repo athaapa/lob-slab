@@ -72,8 +72,9 @@ Benchmarks were conducted on **University of Washington's `attu` cluster**, a Su
 * **OS:** Linux x86_64 (CentOS/RHEL)
 
 ### Aggregate Performance Report
-Operation                | Malloc (ns/op) |   Slab (ns/op) |        Speedup
--------------------------|----------------|----------------|----------------
-Allocation (Linear)      |          63.68 |           7.30 |          8.72x
-Deallocation (Linear)    |          11.49 |           7.39 |          1.56x
-Hot Churn (100 batch)    |           7.80 |           1.66 |          4.69x
+| Operation | Malloc (ns/op) | Slab (ns/op) | Speedup |
+| :--- | :---: | :---: | :---: |
+| **Allocation (Linear)** | 63.68 | 7.30 | **8.72x** |
+| **Deallocation (Linear)** | 11.49 | 7.39 | **1.56x** |
+| **Hot Churn (100 batch)** | 7.80 | 1.66 | **4.69x** |
+| **Swiss Cheese Churn** | 14.56 | 8.96 | **1.62x** |
