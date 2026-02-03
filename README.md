@@ -2,11 +2,11 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-linux--x86__64-lightgrey)
-![Performance](https://img.shields.io/badge/latency-1.65ns-brightgreen)
+![Performance](https://img.shields.io/badge/latency-1.97ns-brightgreen)
 
 A deterministic, $O(1)$ memory allocator designed for high-frequency trading (HFT) systems. This project implements a **cache-friendly slab allocator** that eliminates heap fragmentation and minimizes syscall overhead for fixed-size objects (64 bytes).
 
-**Key Metric:** 8.5x faster than standard `malloc` for linear allocation, and **4.5x faster (1.65ns/op)** under high-churn load.
+**Key Metric:** 8.2x faster than standard `malloc` for linear allocation, and **4.2x faster (1.97ns/op)** under high-churn load.
 
 ```
 .
@@ -46,12 +46,12 @@ Benchmarks were conducted on **University of Washington's `attu` cluster**, a Su
 FINAL BENCHMARK REPORT: 64-BYTE SLAB ALLOCATOR
 Platform: x86-64 (attu) | Resolution: Nanoseconds
 ================================================================================
-Operation                | Malloc (ns/op) |    Slab (ns/op) |        Speedup
+Operation                | Malloc (ns/op) |   Slab (ns/op) |        Speedup
 -------------------------|----------------|----------------|----------------
-Allocation (Linear)      |          63.68 |           7.30 |          8.72x
-Deallocation (Linear)    |          11.49 |           7.39 |          1.56x
-Hot Churn (100 batch)    |           7.80 |           1.66 |          4.69x
-Swiss Cheese Churn       |          14.56 |           8.96 |          1.62x
+Allocation (Linear)      |          64.46 |           7.84 |          8.22x
+Deallocation (Linear)    |          11.32 |           7.49 |          1.51x
+Hot Churn (100 batch)    |           8.32 |           1.97 |          4.23x
+Swiss Cheese Churn       |          14.95 |           9.24 |          1.62x
 ================================================================================
 ```
 
